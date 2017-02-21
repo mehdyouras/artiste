@@ -1,1 +1,1 @@
-;(function(){"use strict";})();
+;(function(){"use strict";var fHandleNavbar=function fHandleNavbar(){console.log("test");document.querySelector("header nav ul").classList.toggle("hidden");};var fPageIsLoaded=function fPageIsLoaded(){document.getElementById("btn-nav").addEventListener("click",fHandleNavbar);};window.addEventListener("load",fPageIsLoaded);})();
