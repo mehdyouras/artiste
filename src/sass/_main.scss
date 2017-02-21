@@ -1,0 +1,93 @@
+html {
+    font-size: 62.5%;
+}
+.hidden{
+  position: absolute !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+}
+body {
+    max-width: 480px;
+    width: 75%;
+    margin: auto;
+    line-height: 1.6;
+    @media screen and (max-width: 545px) {
+        width: 95%;
+    }
+}
+h1 {
+    font-size: 5.063em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: .5em;
+}
+
+header {
+    nav {
+        border-top: 1px solid black; 
+        border-bottom: 1px solid black;
+        margin-top: 1.5em;
+        padding: 1em 0;
+        ul {
+            display: flex;
+            justify-content: space-around;
+            font-size: 3.375em;
+            a {
+                text-decoration: none;
+                color: black;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+article {
+    margin-top: 1.5em;
+    img {
+        float: left;
+        max-width: 240px;
+        padding: 0 0.5em 0.5em 0;
+        @media screen and (max-width: 450px) {
+            float: none;
+            display: block;
+            text-align: center;
+        }
+    }
+    p {
+        font-size: 2.25em;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+    }
+}
+
+footer {
+    border-top: 1px solid black;
+    margin-top: 1.5em;
+    nav {
+        li {
+            &:first-child a::before {
+                font-family: 'FontAwesome';
+                content: "\f02d";
+                margin-right: 0.5em;
+            }
+            &:nth-child(2) a::before {
+                font-family: 'FontAwesome';
+                content: "\f08e";
+                margin-right: 0.5em;
+            }
+        }
+        a {
+            font-size: 3.375em;
+            text-decoration: none;
+            color: black;
+            font-family: 'Roboto', sans-serif;
+        }
+    } 
+}
