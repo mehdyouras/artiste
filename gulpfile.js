@@ -45,5 +45,5 @@ gulp.task("watch", function() {
 }
 );
 // --- Aliases
-gulp.task("default", ["images", "css", "html", "js"]);
+gulp.task("default", ["css", "html", "js"]);
 gulp.task("work", ["default", "watch"]);
