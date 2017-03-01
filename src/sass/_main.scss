@@ -47,6 +47,18 @@ header {
                 color: black;
                 font-family: 'Roboto', sans-serif;
                 font-weight: 300;
+                transition: 0.1s;
+                box-sizing: border-box;
+                @media screen and (max-width: 450px) {
+                    padding-right: 0.3em;
+                }
+            }
+            a:hover {
+                border-top: 4px solid black;
+                @media screen and (max-width: 450px) {
+                    border-top: 0;
+                    border-right: 4px solid black;
+                }
             }
         }
     }
@@ -104,6 +116,11 @@ footer {
             text-decoration: none;
             color: black;
             font-family: 'Roboto', sans-serif;
+            transition: 0.1s;
+            padding-right: 0.3em;
+            &:hover {
+                border-right: 4px solid black;
+            }
         }
     } 
 }
