@@ -93,12 +93,13 @@ article {
         font-size: 2.25em;
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
+        margin-bottom: 1.6em;
     }
 }
 
 footer {
     border-top: 1px solid black;
-    margin-top: 1.5em;
+    padding: 1.6em 0;
     nav {
         li {
             &:first-child a::before {
