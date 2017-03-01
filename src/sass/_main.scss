@@ -11,7 +11,7 @@ html {
   clip: rect(1px, 1px, 1px, 1px) !important;
 }
 body {
-    max-width: 480px;
+    max-width: 675px;
     width: 75%;
     margin: auto;
     line-height: 1.6;
@@ -81,7 +81,8 @@ article {
     img {
         float: left;
         max-width: 240px;
-        padding: 0 0.5em 0.5em 0;
+        padding: 0 1em 0.5em 0;
+        margin-top: 3px;
         @media screen and (max-width: 450px) {
             float: none;
             display: block;
