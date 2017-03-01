@@ -1,0 +1,20 @@
+article.biographie {
+    margin-top: 36px;
+    img {
+        float: left;
+        max-width: 240px;
+        padding: 0 1em 0.5em 0;
+        margin-top: 3px;
+        @media screen and (max-width: 450px) {
+            float: none;
+            display: block;
+            margin: auto;
+        }
+    }
+    p {
+        font-size: 2.25em;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        margin-bottom: 1.6em;
+    }
+}
