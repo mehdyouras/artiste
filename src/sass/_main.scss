@@ -1,5 +1,5 @@
 html {
-    font-size: 62.5%;
+    font-size:  62.5%;
 }
 .hidden{
   position: absolute !important;
@@ -15,35 +15,34 @@ body {
     width: 75%;
     margin: auto;
     line-height: 1.6;
-    @media screen and (max-width: 545px) {
+    @media screen and (max-width: 560px) {
         width: 95%;
     }
 }
 h1 {
-    font-size: 5.063em;
+    @include v-rythm(4);
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
-    margin-top: .5em;
-    padding: 2.5px 0;
+    @media screen and (max-width: 440px) {
+        line-height: line-height(3);
+    }
 }
 
 header {
     nav {
-        border-top: 1px solid black; 
         border-bottom: 1px solid black;
-        //margin-top: 15px;
-        padding: 1.3em 0;
         ul {
             display: flex;
+            
             justify-content: space-around;
-            font-size: 3.375em;
             transition: 0.2s;
             @media screen and (max-width: 450px) {
                 flex-direction: column;
             }
             a {
+                @include v-rythm(3);
                 text-decoration: none;
                 color: black;
                 font-family: 'Roboto', sans-serif;
@@ -77,11 +76,17 @@ header {
     }
 }
 
+[id="btn-container"] {
+    padding: 4px 0;
+}
+
 footer {
+    box-sizing: border-box;
     border-top: 1px solid black;
-    padding: 1.6em 0;
+   // padding: 1.6em 0;
     nav {
         li {
+            @include v-rythm(3);
             &:first-child a::before {
                 font-family: 'FontAwesome';
                 content: "\f02d";
@@ -94,7 +99,6 @@ footer {
             }
         }
         a {
-            font-size: 3.375em;
             text-decoration: none;
             color: black;
             font-family: 'Roboto', sans-serif;
