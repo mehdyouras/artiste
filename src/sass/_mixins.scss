@@ -1,0 +1,4 @@
+@mixin v-rythm($level) {
+    font-size: type-scale($level);
+    line-height: line-height($level);
+}
