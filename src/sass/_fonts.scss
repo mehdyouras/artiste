@@ -1,1 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,700');
+
+$type-scale: (
+    -1: 0.667rem,  // small text
+    0: 1rem,
+    1: 1.5em,      // body text
+    2: 2.25rem,  // large text
+    3: 3.375rem ,
+    4: 5.063rem  // main heading
+);
+
+
+$base-font-size: 1rem;
+$base-line-height: $base-font-size * 1.6;
+
+$line-heights: (
+    -1: $base-line-height,
+    0: $base-line-height,
+    1: $base-line-height * 2,
+    2: $base-line-height * 2
+);
