@@ -1,5 +1,43 @@
 article.galerie {
     div {
-        margin: 36px 0;
+        margin-top: 3.6em;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    li {
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        width: 48%;
+        min-height: 216px;
+        margin: 0 0 3.6em;
+        padding: 3px 4px 0;
+        @media screen and (max-width: 715px) {
+            width: 100%;
+        }
+    }
+    figure img {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        max-height: 211px;
+        @media screen and (max-width: 715px) {
+            max-height: 283px;
+        }
+    }
+    figcaption {
+        padding: 0 9px;
+        font-size: type-scale(1);
+        line-height: 2.4;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        &:before {
+            display: block;
+            margin-right: 5px;
+            width: 15px;
+            border-bottom: 3px solid black;
+        }
     }
 }
