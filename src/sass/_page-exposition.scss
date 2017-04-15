@@ -17,6 +17,9 @@
         line-height: 1.6em;
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
+        @media screen and (max-width: 405px) {
+            line-height: 1.422222222222222;
+        }
     }
     time {
         display: block;
@@ -38,9 +41,16 @@
     section {
         display: flex;
         flex-direction: row;
+        @media screen and (max-width: 750px) {
+            flex-wrap: wrap;
+        }
         img  {
             height: 324px;
             margin-right: 1.8em;
+            @media screen and (max-width: 750px) {
+                margin: auto;
+                margin-bottom: 3.6em;
+            }
         }
         p {
             @include v-rythm(2);
