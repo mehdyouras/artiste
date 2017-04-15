@@ -8,6 +8,7 @@ article.galerie {
         justify-content: space-around;
     }
     li {
+        position: relative;
         box-sizing: border-box;
         border: 1px solid #ddd;
         width: 48%;
@@ -33,11 +34,5 @@ article.galerie {
         line-height: 2.4;
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
-        &:before {
-            display: block;
-            margin-right: 5px;
-            width: 15px;
-            border-bottom: 3px solid black;
-        }
     }
 }

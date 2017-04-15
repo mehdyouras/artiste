@@ -1,5 +1,6 @@
 html {
     font-size:  62.5%;
+    
 }
 .hidden{
   position: absolute !important;
@@ -11,6 +12,8 @@ html {
   clip: rect(1px, 1px, 1px, 1px) !important;
 }
 body {
+    background: url("../img/bcg.png") repeat-x;
+    background-size: 0.8em;
     max-width: 675px;
     width: 75%;
     margin: auto;
@@ -35,7 +38,6 @@ header {
         border-bottom: 1px solid black;
         ul {
             display: flex;
-            
             justify-content: space-around;
             transition: 0.2s;
             @media screen and (max-width: 450px) {

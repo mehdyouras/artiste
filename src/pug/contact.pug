@@ -5,7 +5,7 @@ html(lang="fr")
         meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
         meta(http-equiv="X-UA-Compatible" content="ie=edge")
         link(rel="stylesheet", href="assets/css/screen.css")
-        title Expositions - Larry Burrows
+        title Contact - Larry Burrows
     body
         header
             h1 Larry Burrows
@@ -19,22 +19,18 @@ html(lang="fr")
                     li
                         a(href="galerie.html") Galerie
                     li
-                        a(href="#") Exposition
-        article.exposition
-            h2.hidden Les expositions
-            article
-                header 
-                    h3 Exposition au Musée de la Photographie de Bruxelles
-                    time  17/04
-                        span 26/05
-                section
-                    img(src="assets/img/catalogue.jpg")
-                    div
-                        p « <i>Larry Burrows: Viet-nam</i> » vous sera présenté dans son intégralité au Musée de la Photographie de Bruxelles du 17 avril au 26 Mai.
-                        ul
-                            li Rue du Cirque 10, 1000 Bruxelles
-                            li 17 avril - 26 mai de 10h - 21h
-                            li Entrée à 9€ 
+                        a(href="exposition.html") Exposition
+        section.contact
+            form(action="#")
+                fieldset
+                    legend Formulaire de contact
+                    label(for="name") Votre nom
+                    input(type="text" name="name" id="name")
+                    label(for="email") Votre email
+                    input(type="email" name="email" id="email")
+                    label(for="description") Votre message
+                    textarea(name="description" id="description" cols="30" rows="10")
+                    input(type="submit" value="Envoyer")
         footer
             nav
                 h2(class="hidden") Navigation secondaire
