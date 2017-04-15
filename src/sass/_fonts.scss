@@ -16,8 +16,8 @@ $base-line-height: $base-font-size * 1.6;
 $line-heights: (
     -1: $base-line-height,
     0: $base-line-height,
-    1: $base-line-height * 2,
-    2: $base-line-height * 2,
+    1: $base-line-height,
+    2: $base-line-height,
     3: $base-line-height * 2,
     4: $base-line-height * 3
 );

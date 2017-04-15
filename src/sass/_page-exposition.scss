@@ -1,0 +1,67 @@
+.exposition {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin: 3.6em 0;
+    header {
+        display: flex;
+        flex-direction: row;
+        border-bottom: solid 1px #ddd; 
+        margin-bottom: 35px;
+        @media screen and (max-width: 750px) {
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+    }
+    h3 {
+        font-size: 3.375rem;
+        line-height: 1.6em;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+    }
+    time {
+        display: block;
+        border-left: solid 1px #ddd;
+        font-size: 3.375rem;
+        line-height: 1.6em;
+        min-width: 25%;
+        text-align: center;
+        span {
+            display: block;
+        }
+        @media screen and (max-width: 750px) {
+            border: 0;
+            background: black;
+            color: white;
+            width: 100%;
+        }
+    }
+    section {
+        display: flex;
+        flex-direction: row;
+        img  {
+            height: 324px;
+            margin-right: 1.8em;
+        }
+        p {
+            @include v-rythm(2);
+        }
+        li {
+            @include v-rythm(1);
+            &:nth-child(1)::before {
+                font-family: 'FontAwesome';
+                content: "\f041";
+                margin-right: 0.5em;
+            }
+            &:nth-child(2)::before {
+                font-family: 'FontAwesome';
+                content: "\f073";
+                margin-right: 0.5em;
+            }
+            &:nth-child(3)::before {
+                font-family: 'FontAwesome';
+                content: "\f145";
+                margin-right: 0.5em;
+            }
+        }
+    }
+}
