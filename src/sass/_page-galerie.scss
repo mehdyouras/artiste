@@ -50,10 +50,17 @@ article.galerie {
 	top: 0;
 	left: 0;
 	background: rgba(0,0,0,0.8);
-}
-
-.lightbox img {
-	max-width: 90%;
-	max-height: 80vh;
-	margin-top: 2%;
+    img {
+        max-width: 90%;
+	    max-height: 80vh;
+	    margin-top: 2%;
+    }
+    figcaption {
+        padding: 0 9px;
+        font-size: type-scale(1);
+        line-height: 2.4;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        color: white;
+    }
 }
