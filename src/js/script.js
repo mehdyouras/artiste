@@ -2,7 +2,6 @@ const fHandleNavbar = function() {
     document.querySelector("header nav ul").classList.toggle("hidden");
 };
 
-const fShowLightbox = function(oEvent) {
 const fHandleLightbox = function(oEvent) {
     let sCaption, $img, sImgSrc, sLightboxSrc, $lightbox;
     oEvent.preventDefault();
@@ -14,8 +13,7 @@ const fHandleLightbox = function(oEvent) {
     document.querySelector("body").innerHTML += "<div class='lightbox'><figure><img src="+sLightboxSrc+"></img><figcaption>"+sCaption+"</figcaption></figure></div>";
     
     $lightbox = document.querySelector(".lightbox");
-    $lightbox.addEventListener("click", function(oEvent) {
-        let $lightbox = oEvent.currentTarget;
+    $lightbox.addEventListener("click", function() {
         $lightbox.parentNode.removeChild($lightbox);
         Array.from( document.querySelectorAll( "figure img" ) ).forEach( function( $elt ) {
             $elt.addEventListener( "click", fShowLightbox );
@@ -27,7 +25,6 @@ const fHandleLightbox = function(oEvent) {
 const fPageIsLoaded = function() {
     document.getElementById("btn-nav").addEventListener("click",fHandleNavbar);
     Array.from( document.querySelectorAll( "figure img" ) ).forEach( function( $elt ) {
-        $elt.addEventListener( "click", fShowLightbox );
         $elt.addEventListener( "click", fHandleLightbox );
     } );
 };
