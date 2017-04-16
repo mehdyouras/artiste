@@ -3,6 +3,7 @@ const fHandleNavbar = function() {
 };
 
 const fShowLightbox = function(oEvent) {
+const fHandleLightbox = function(oEvent) {
     let sCaption, $img, sImgSrc, sLightboxSrc, $lightbox;
     oEvent.preventDefault();
     $img = oEvent.currentTarget;
@@ -27,6 +28,7 @@ const fPageIsLoaded = function() {
     document.getElementById("btn-nav").addEventListener("click",fHandleNavbar);
     Array.from( document.querySelectorAll( "figure img" ) ).forEach( function( $elt ) {
         $elt.addEventListener( "click", fShowLightbox );
+        $elt.addEventListener( "click", fHandleLightbox );
     } );
 };
 
