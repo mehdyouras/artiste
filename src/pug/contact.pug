@@ -21,16 +21,21 @@ html(lang="fr")
                     li
                         a(href="exposition.html") Exposition
         section.contact
+            h2.hidden Obtenir un catalogue
             form(action="#")
                 fieldset
-                    legend Formulaire de contact
+                    legend Obtenir un catalogue
                     label(for="name") Votre nom
                     input(type="text" name="name" id="name")
                     label(for="email") Votre email
                     input(type="email" name="email" id="email")
-                    label(for="description") Votre message
-                    textarea(name="description" id="description" cols="30" rows="10")
-                    input(type="submit" value="Envoyer")
+                    label(for="description") Votre adresse
+                    input(type="text" name="address" id="address")
+                    div
+                        div
+                            label(for="count") Nombre de catalogue souhaité
+                            input(type="number" value="1" name="count" id="count")
+                        input(type="submit" value="Envoyer")
         footer
             nav
                 h2(class="hidden") Navigation secondaire
