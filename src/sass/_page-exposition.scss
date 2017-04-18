@@ -60,6 +60,14 @@
         }
         li {
             @include v-rythm(1);
+            a {
+                color: black;
+                font-weight: bold;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
             &:nth-child(1)::before {
                 font-family: 'FontAwesome';
                 content: "\f041";
@@ -73,6 +81,11 @@
             &:nth-child(3)::before {
                 font-family: 'FontAwesome';
                 content: "\f145";
+                margin-right: 0.5em;
+            }
+            &:nth-child(4)::before {
+                font-family: 'FontAwesome';
+                content: "\f15c";
                 margin-right: 0.5em;
             }
         }
