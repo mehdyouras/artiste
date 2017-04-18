@@ -28,16 +28,36 @@ const fHandleLightbox = function(oEvent) {
         evt = evt || window.event;
         if (evt.keyCode == 27) {
             fRemoveLightBox();
-    }
+        }
+    };
 };
-}
+
+const fHandleContactModal = function(oEvent) {
+    oEvent.preventDefault();
+    document.querySelector("body").innerHTML += "<section class='contact modal'><h2 class='hidden'>Obtenir un catalogue</h2><form action='#'><div class='btn-exit'></div><fieldset><legend>Obtenir un catalogue</legend><label for='name'>Votre nom</label><input type='text' name='name' id='name'><label for='email'>Votre email</label><input type='email' name='email' id='email'><label for='description'>Votre adresse</label><input type='text' name='address' id='address'><div><div><label for='count'>Nombre de catalogue souhaité</label><input value='1' type='number' name='count' id='count'></div><input type='submit' value='Envoyer'></div></fieldset></form></section>";
+    
+    const fRemoveModal = function() {
+        document.querySelector("body").removeChild(document.querySelector(".modal"));
+        document.getElementById("linkToModal").addEventListener("click", fHandleContactModal);
+    };
+    document.querySelector(".btn-exit").addEventListener("click", fRemoveModal);
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        if (evt.keyCode == 27) {
+            fRemoveModal();
+        }
+    };
+};
 
 
 const fPageIsLoaded = function() {
     document.getElementById("btn-nav").addEventListener("click",fHandleNavbar);
+
     Array.from( document.querySelectorAll( "figure img" ) ).forEach( function( $elt ) {
         $elt.addEventListener( "click", fHandleLightbox );
     } );
+
+    document.getElementById("linkToModal").addEventListener("click", fHandleContactModal);
 };
 
 window.addEventListener( "load", fPageIsLoaded );
