@@ -1,7 +1,7 @@
 .contact {
     margin: 3.6em 0;
     fieldset {
-        width: 85%;
+        width: 70%;
         margin: auto;
         font-size: type-scale(1);
         line-height: 1.6em;
@@ -10,13 +10,27 @@
         margin-bottom: 1.6em;
         display: flex;
         flex-direction: row;
+        &>div {
+            display: flex;
+            align-items: flex-end;
+            div {
+                width: 50%;
+            }
         }
+        @media screen and (max-width: 560px) {
+            width: 95%;
+        }   
+    }
         legend {
             font-size: type-scale(3);
             margin-bottom: 36px;
+            line-height: 1.066666666666667;
+        }
+        label {
+            line-height: 2.4;
         }
         input {
-            width: 70%;
+            width: 100%;
             box-sizing: border-box;
             height: 36px;
             margin-bottom: 36px;
@@ -25,7 +39,58 @@
             width: 100%;
         }
         input[type="submit"] {
-            margin-top: 36px;
-            padding: 20px 20px;
+            width: 30%;
+            background-color: white;
+            border: 1px solid #ddd;
+            margin-left: auto; 
         }
+        input[type="number"] {
+            width: 85%;
+        }
+}
+
+.modal {
+    margin: 0;
+    position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+    form {
+        width: 40%;
+        max-width: 480px;
+        margin: auto;
+        margin-top: 3.6em;
+        background: white; 
+        box-shadow: 0 0 6px rgba(255,255,255,0.27);
+        padding: 3.6em;
+        padding-bottom: 0;
+        position: relative;
+        @media screen and (max-width: 850px) {
+            width: 60%;
+        } 
+        @media screen and (max-width: 550px) {
+            width: 80%;
+        } 
+        .btn-exit {
+            font-size: 20px;
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: 18px;
+            top: 8px;
+            text-align: center;
+            cursor: pointer;
+            &:before {
+                content: "×";
+            }
+        }
+    }
+    fieldset {
+        width: 100%;
+    }
+    
 }
