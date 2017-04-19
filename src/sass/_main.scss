@@ -10,6 +10,17 @@ html {
   overflow: hidden !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
 }
+
+.error {
+    color: #a94442;
+    input {
+        border: 1px solid #a94442;
+    }
+    small {
+        @include v-rythm(1);
+    }
+}
+
 body {
     background: url("../img/bcg.png") repeat-x;
     background-size: 0.8em;
