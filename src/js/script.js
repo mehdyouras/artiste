@@ -1,3 +1,9 @@
+const   reName = /^[a-zA-Z ]+$/,
+        reEmail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+        rePhone = /^[0-9]+$/,
+        reAddress = /^[a-zA-Z0-9 ]+$/,
+        reCount = /^[0-9]+$/;
+
 const fHandleNavbar = function() {
     document.querySelector("header nav ul").classList.toggle("hidden");
 };
@@ -32,10 +38,88 @@ const fHandleLightbox = function(oEvent) {
     };
 };
 
+
+const fHandleNameInput = function(oEvent) {
+        oEvent.currentTarget.classList.remove("input-error");
+        let bTest = reName.test(oEvent.currentTarget.value),
+            $error = document.querySelector("#form-group-name .error");
+        if (oEvent.currentTarget.parentNode.querySelector(".error")){
+            oEvent.currentTarget.parentNode.removeChild($error);
+            oEvent.currentTarget.parentNode.classList.remove("error");
+        }
+        if (!bTest) {
+            oEvent.currentTarget.parentNode.classList.add("error");
+            if (oEvent.currentTarget.value == "") {
+                oEvent.currentTarget.parentNode.insertAdjacentHTML('beforeend', '<small class="error">Veuillez remplir ce champ.</small>');  
+            } else {
+                oEvent.currentTarget.parentNode.insertAdjacentHTML('beforeend', '<small class="error">Veuillez entrer un nom valide composé uniquement de lettre.</small>');
+            }
+        }
+};
+
+const fHandleEmailInput = function(oEvent) {
+        oEvent.currentTarget.classList.remove("input-error");
+        let bTest = reEmail.test(oEvent.currentTarget.value),
+            $error = document.querySelector("#form-group-email .error");
+        if (oEvent.currentTarget.parentNode.querySelector(".error")){
+            oEvent.currentTarget.parentNode.removeChild($error);
+            oEvent.currentTarget.parentNode.classList.remove("error");
+        }
+        if (!bTest) {
+            oEvent.currentTarget.parentNode.classList.add("error");
+            if (oEvent.currentTarget.value == "") {
+                oEvent.currentTarget.parentNode.insertAdjacentHTML('beforeend', '<small class="error">Veuillez remplir ce champ.</small>');  
+            } else {
+                oEvent.currentTarget.parentNode.insertAdjacentHTML('beforeend', '<small class="error">Veuillez entrer une adresse email valide.</small>');
+            }
+        }
+};
+
+const fHandleAddressInput = function(oEvent) {
+        oEvent.currentTarget.classList.remove("input-error");
+        let bTest = reAddress.test(oEvent.currentTarget.value),
+            $error = document.querySelector("#form-group-address .error");
+        if (oEvent.currentTarget.parentNode.querySelector(".error")){
+            oEvent.currentTarget.parentNode.removeChild($error);
+            oEvent.currentTarget.parentNode.classList.remove("error");
+        }
+        if (!bTest) {
+            oEvent.currentTarget.parentNode.classList.add("error");
+            if (oEvent.currentTarget.value == "") {
+                oEvent.currentTarget.parentNode.insertAdjacentHTML('beforeend', '<small class="error">Veuillez remplir ce champ.</small>');  
+            } else {
+                oEvent.currentTarget.parentNode.insertAdjacentHTML('beforeend', '<small class="error">Veuillez entrer une adresse valide.</small>');
+            }
+        }
+};
+
+const fHandleCountInput = function(oEvent) {
+        oEvent.currentTarget.classList.remove("input-error");
+        let bTest = reCount.test(oEvent.currentTarget.value),
+            $error = document.querySelector("#form-group-count .error");
+        if (oEvent.currentTarget.parentNode.querySelector(".error")){
+            oEvent.currentTarget.parentNode.removeChild($error);
+            oEvent.currentTarget.parentNode.classList.remove("error");
+        }
+        if (!bTest) {
+            oEvent.currentTarget.parentNode.classList.add("error");
+            if (oEvent.currentTarget.value == "") {
+                oEvent.currentTarget.parentNode.insertAdjacentHTML('beforeend', '<small class="error">Veuillez remplir ce champ.</small>');  
+            } else {
+                oEvent.currentTarget.parentNode.insertAdjacentHTML('beforeend', '<small class="error">Veuillez entrer une quantité de catalogue valide.</small>');
+            }
+        }
+};
+
 const fHandleContactModal = function(oEvent) {
     oEvent.preventDefault();
     document.querySelector("body").innerHTML += "<section class='contact modal'><h2 class='hidden'>Obtenir un catalogue</h2><form action='#'><div class='btn-exit'></div><fieldset><legend>Obtenir un catalogue</legend><div id='form-group-name'><label for='name'>Votre nom</label><input type='text' name='name' id='name'></div><div id='form-group-email'><label for='email'>Votre email</label><input type='email' name='email' id='email'></div><div id='form-group-address'><label for='description'>Votre adresse</label><input type='text' name='address' id='address'></div><div id='submit-line'><div><label for='count'>Nombre de catalogue souhaité</label><input type='number' value='1' name='count' id='count'></div><input type='submit' value='Envoyer'></div></fieldset></form></section>";
     
+    document.getElementById('name').addEventListener("blur", fHandleNameInput);
+    document.getElementById('email').addEventListener("blur", fHandleEmailInput);
+    document.getElementById('address').addEventListener("blur", fHandleAddressInput);
+    document.getElementById('count').addEventListener("blur", fHandleCountInput);
+
     const fRemoveModal = function() {
         document.querySelector("body").removeChild(document.querySelector(".modal"));
         document.getElementById("linkToModal").addEventListener("click", fHandleContactModal);
@@ -57,7 +141,15 @@ const fPageIsLoaded = function() {
         $elt.addEventListener( "click", fHandleLightbox );
     } );
 
-    document.getElementById("linkToModal").addEventListener("click", fHandleContactModal);
+    if(document.getElementById("linkToModal")) {
+        document.getElementById("linkToModal").addEventListener("click", fHandleContactModal);
+    }
+    if(document.querySelector(".contact")) {
+        document.getElementById('name').addEventListener("blur", fHandleNameInput);
+        document.getElementById('email').addEventListener("blur", fHandleEmailInput);
+        document.getElementById('address').addEventListener("blur", fHandleAddressInput);
+        document.getElementById('count').addEventListener("blur", fHandleCountInput);
+    }
 };
 
 window.addEventListener( "load", fPageIsLoaded );
