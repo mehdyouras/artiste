@@ -25,13 +25,16 @@ html(lang="fr")
             form(action="#")
                 fieldset
                     legend Obtenir un catalogue
-                    label(for="name") Votre nom
-                    input(type="text" name="name" id="name")
-                    label(for="email") Votre email
-                    input(type="email" name="email" id="email")
-                    label(for="description") Votre adresse
-                    input(type="text" name="address" id="address")
-                    div
+                    div#form-group-name
+                        label(for="name") Votre nom
+                        input(type="text" name="name" id="name")
+                    div#form-group-email
+                        label(for="email") Votre email
+                        input(type="email" name="email" id="email")
+                    div#form-group-address
+                        label(for="description") Votre adresse
+                        input(type="text" name="address" id="address")
+                    div#submit-line
                         div
                             label(for="count") Nombre de catalogue souhaité
                             input(type="number" value="1" name="count" id="count")

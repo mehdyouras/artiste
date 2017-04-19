@@ -34,7 +34,7 @@ const fHandleLightbox = function(oEvent) {
 
 const fHandleContactModal = function(oEvent) {
     oEvent.preventDefault();
-    document.querySelector("body").innerHTML += "<section class='contact modal'><h2 class='hidden'>Obtenir un catalogue</h2><form action='#'><div class='btn-exit'></div><fieldset><legend>Obtenir un catalogue</legend><label for='name'>Votre nom</label><input type='text' name='name' id='name'><label for='email'>Votre email</label><input type='email' name='email' id='email'><label for='description'>Votre adresse</label><input type='text' name='address' id='address'><div><div><label for='count'>Nombre de catalogue souhaité</label><input value='1' type='number' name='count' id='count'></div><input type='submit' value='Envoyer'></div></fieldset></form></section>";
+    document.querySelector("body").innerHTML += "<section class='contact modal'><h2 class='hidden'>Obtenir un catalogue</h2><form action='#'><div class='btn-exit'></div><fieldset><legend>Obtenir un catalogue</legend><div id='form-group-name'><label for='name'>Votre nom</label><input type='text' name='name' id='name'></div><div id='form-group-email'><label for='email'>Votre email</label><input type='email' name='email' id='email'></div><div id='form-group-address'><label for='description'>Votre adresse</label><input type='text' name='address' id='address'></div><div id='submit-line'><div><label for='count'>Nombre de catalogue souhaité</label><input type='number' value='1' name='count' id='count'></div><input type='submit' value='Envoyer'></div></fieldset></form></section>";
     
     const fRemoveModal = function() {
         document.querySelector("body").removeChild(document.querySelector(".modal"));
