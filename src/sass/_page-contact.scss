@@ -34,7 +34,7 @@
         input {
             width: 100%;
             box-sizing: border-box;
-            height: 36px;
+            height: 3.272727272727273em; /* 36px/11px */
         }
         textarea {
             width: 100%;
@@ -75,13 +75,13 @@
             width: 80%;
         } 
         .btn-exit {
-            font-size: 20px;
+            font-size: 2em;
             display: block;
             position: absolute;
-            width: 30px;
-            height: 30px;
-            right: 18px;
-            top: 8px;
+            width: 1.5em;
+            height: 1.5em;
+            right: 0.9em;
+            top: 0.4em;
             text-align: center;
             cursor: pointer;
             &:before {

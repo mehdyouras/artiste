@@ -9,7 +9,7 @@
         display: flex;
         flex-direction: row;
         border-bottom: solid 1px #ddd; 
-        margin-bottom: 35px;
+        margin-bottom: 3.5em;
         @media screen and (max-width: 750px) {
             flex-direction: column;
             flex-wrap: wrap;
@@ -48,7 +48,7 @@
             flex-wrap: wrap;
         }
         img  {
-            height: 324px;
+            height: 32.4em;
             margin-right: 1.8em;
             @media screen and (max-width: 750px) {
                 margin: auto;

@@ -87,8 +87,8 @@ header {
         border-bottom: 17px double black; 
         border-top: 6px solid black; 
         content:"";
-        height: 5px; 
-        width:30px;
+        height: 0.5em; 
+        width:3em;
     }
 }
 
@@ -103,7 +103,6 @@ header {
 footer {
     box-sizing: border-box;
     border-top: 1px solid black;
-   // padding: 1.6em 0;
     nav {
         li {
             @include v-rythm(3);
