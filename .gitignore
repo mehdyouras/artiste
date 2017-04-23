@@ -1,5 +1,4 @@
 .idea
-
-assets/
-
+assets/css/
+assets/js/
 node_modules
