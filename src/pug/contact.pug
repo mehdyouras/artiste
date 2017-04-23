@@ -8,9 +8,9 @@ html(lang="fr")
         title Contact - Larry Burrows
     body
         header
-            h1 Larry Burrows
+            h1(aria-level=1) Larry Burrows
             nav
-                h2(class="hidden") Navigation principale
+                h2(class="hidden" aria-hidden="true" aria-level=2) Navigation principale
                 div#btn-container
                     div#btn-nav
                 ul
@@ -21,7 +21,7 @@ html(lang="fr")
                     li
                         a(href="exposition.html") Exposition
         section.contact
-            h2.hidden Obtenir un catalogue
+            h2.hidden(aria-hidden="true" aria-level=2) Obtenir un catalogue
             form(action="#")
                 fieldset
                     legend Obtenir un catalogue
@@ -41,7 +41,7 @@ html(lang="fr")
                         input(type="submit" value="Envoyer")
         footer
             nav
-                h2(class="hidden") Navigation secondaire
+                h2(class="hidden" aria-hidden="true") Navigation secondaire
                 ul
                     li
                         a(href="assets/bibliographie.html") Bibliographie

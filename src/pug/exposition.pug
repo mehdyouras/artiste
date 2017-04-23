@@ -9,9 +9,9 @@ html(lang="fr")
         title Expositions - Larry Burrows
     body
         header
-            h1 Larry Burrows
+            h1(aria-level=1) Larry Burrows
             nav
-                h2(class="hidden") Navigation principale
+                h2(class="hidden" aria-hidden="true" aria-level=2) Navigation principale
                 div#btn-container
                     div#btn-nav
                 ul
@@ -22,14 +22,14 @@ html(lang="fr")
                     li
                         a(href="#") Exposition
         article.exposition
-            h2.hidden Les expositions
+            h2.hidden(aria-hidden="true" aria-level=2) Les expositions
             article
                 header 
                     h3 Exposition au Musée de la Photographie de Bruxelles
                     time  17/04
                         span 26/05
                 section
-                    h3.hidden Description de l'exposition
+                    h3.hidden(aria-hidden="true") Description de l'exposition
                     img(src="assets/img/catalogue.jpg", alt="Couverture du livre Larry Burrows: Viet-nam")
                     div
                         p « <cite>Larry Burrows: Viet-nam</cite> » vous sera présenté dans son intégralité au Musée de la Photographie de Bruxelles du <time datetime="2017-04-17">17 avril</time> au <time datetime="2017-05-26">26 mai</time>.
@@ -41,7 +41,7 @@ html(lang="fr")
                                 a(href="contact.html" id="linkToModal") Obtenir le catalogue de l'exposition
         footer
             nav
-                h2(class="hidden") Navigation secondaire
+                h2(class="hidden" aria-hidden="true" aria-level=2) Navigation secondaire
                 ul
                     li
                         a(href="bibliographie.html") Bibliographie

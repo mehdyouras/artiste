@@ -9,9 +9,9 @@ html(lang="fr")
         title Bibliographie - Larry Burrows
     body
         header
-            h1 Larry Burrows
+            h1(aria-level=1) Larry Burrows
             nav
-                h2(class="hidden") Navigation principale
+                h2(class="hidden" aria-hidden="true" aria-level=2) Navigation principale
                 div#btn-container
                     div#btn-nav
                 ul
@@ -22,14 +22,14 @@ html(lang="fr")
                     li
                         a(href="exposition.html") Exposition
         section.bibliographie
-            h2 Bibliographie
+            h2(aria-level=2) Bibliographie
             ul
                 li Larry Burrows, <cite>Larry Burrows: compassionate photographer</cite>, Time-Life Books, <time datetime="1972">1972</time>.
                 li Larry Burrows, <cite>Vietnam</cite>, Alfred A. Knopf, <time datetime="2002">2002</time>.
                 li <cite>LIFE Magazine</cite>, Vol. 58,N° 15, <time datetime="1965-04-16">16 avr. 1965</time>.
         footer
             nav
-                h2(class="hidden") Navigation secondaire
+                h2(class="hidden" aria-hidden="true" aria-level=2) Navigation secondaire
                 ul
                     li
                         a(href="#") Bibliographie
