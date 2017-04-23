@@ -14,17 +14,7 @@
             flex-direction: column;
             flex-wrap: wrap;
         }
-    }
-    h3 {
-        font-size: 3.375rem;
-        line-height: 1.6em;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        @media screen and (max-width: 405px) {
-            line-height: 1.422222222222222;
-        }
-    }
-    time {
+        time {
         display: block;
         border-left: solid 1px #ddd;
         font-size: 3.375rem;
@@ -39,6 +29,16 @@
             background: black;
             color: white;
             width: 100%;
+        }
+    }
+    }
+    h3 {
+        font-size: 3.375rem;
+        line-height: 1.6em;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        @media screen and (max-width: 405px) {
+            line-height: 1.422222222222222;
         }
     }
     section {
