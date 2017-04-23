@@ -38,6 +38,13 @@ const fHandleLightbox = function(oEvent) {
     };
 };
 
+const fHandleFigureLinks = function(oEvent) {
+    oEvent.preventDefault();
+    Array.from( document.querySelectorAll( "figure a" ) ).forEach( function( $elt ) {
+        $elt.addEventListener( "click", fHandleFigureLinks );
+    } );
+}
+
 
 const fHandleNameInput = function(oEvent) {
         oEvent.currentTarget.classList.remove("input-error");
@@ -139,6 +146,9 @@ const fPageIsLoaded = function() {
 
     Array.from( document.querySelectorAll( "figure img" ) ).forEach( function( $elt ) {
         $elt.addEventListener( "click", fHandleLightbox );
+    } );
+    Array.from( document.querySelectorAll( "figure a" ) ).forEach( function( $elt ) {
+        $elt.addEventListener( "click", fHandleFigureLinks );
     } );
 
     if(document.getElementById("linkToModal")) {
