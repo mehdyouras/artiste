@@ -8,35 +8,37 @@
     header {
         display: flex;
         flex-direction: row;
-        border-bottom: solid 1px #ddd; 
+        border-bottom: solid 1px #ddd;
         margin-bottom: 3.5em;
         @media screen and (max-width: 750px) {
             flex-direction: column;
             flex-wrap: wrap;
         }
         time {
-        display: block;
-        border-left: solid 1px #ddd;
-        font-size: 3.375rem;
-        line-height: 1.6em;
-        min-width: 25%;
-        text-align: center;
-        span {
             display: block;
+            border-left: solid 1px #ddd;
+            font-size: 3.375rem;
+            line-height: 1.6em;
+            min-width: 25%;
+            text-align: center;
+            padding-bottom: 18px;
+            span {
+                display: block;
+            }
+            @media screen and (max-width: 750px) {
+                border: 0;
+                background: black;
+                color: white;
+                width: 100%;
+            }
         }
-        @media screen and (max-width: 750px) {
-            border: 0;
-            background: black;
-            color: white;
-            width: 100%;
-        }
-    }
     }
     h3 {
         font-size: 3.375rem;
         line-height: 1.6em;
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
+        margin-bottom: 18px;
         @media screen and (max-width: 405px) {
             line-height: 1.422222222222222;
         }
@@ -47,7 +49,7 @@
         @media screen and (max-width: 750px) {
             flex-wrap: wrap;
         }
-        img  {
+        img {
             height: 32.4em;
             margin-right: 1.8em;
             @media screen and (max-width: 750px) {
@@ -71,7 +73,7 @@
             &:nth-child(1)::before {
                 font-family: 'FontAwesome';
                 content: "\f041";
-                margin-right: 0.5em;
+                margin-right: 0.9em;
             }
             &:nth-child(2)::before {
                 font-family: 'FontAwesome';
