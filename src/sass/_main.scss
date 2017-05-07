@@ -1,14 +1,27 @@
 html {
-    font-size:  62.5%;
+    font-size: 62.5%;
 }
-.hidden{
-  position: absolute !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
+
+.hidden {
+    position: absolute !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+}
+
+.active-top {
+    border-top: 4px solid black;
+    @media screen and (max-width: 450px) {
+        border-top: 0;
+        border-right: 4px solid black;
+    }
+}
+
+.active-right {
+    border-right: 4px solid black;
 }
 
 .error {
@@ -36,6 +49,7 @@ body {
         width: 95%;
     }
 }
+
 h1 {
     @include v-rythm(4);
     font-family: 'Roboto', sans-serif;
@@ -84,11 +98,11 @@ header {
     visibility: 0;
     @media screen and (max-width: 450px) {
         visibility: 1;
-        border-bottom: 17px double black; 
-        border-top: 6px solid black; 
-        content:"";
-        height: 0.5em; 
-        width:3em;
+        border-bottom: 17px double black;
+        border-top: 6px solid black;
+        content: "";
+        height: 0.5em;
+        width: 3em;
     }
 }
 
@@ -127,5 +141,5 @@ footer {
                 border-right: 4px solid black;
             }
         }
-    } 
+    }
 }

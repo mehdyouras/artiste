@@ -18,11 +18,21 @@ html(lang="fr")
                     li
                         a(href="index.html") Accueil
                     li
-                        a(href="#") Galerie
+                        a(href="#").active-top Galerie
                     li
                         a(href="exposition.html") Exposition
         article.galerie
-            h2.hidden(aria-hidden="true" aria-level=1) Quelques photographies de Larry Burrows
+            header
+                h2.hidden(aria-hidden="true" aria-level=2) Quelques photographies de Larry Burrows
+                nav
+                    h3.hidden(aria-hidden="true" aria-level=3)
+                    ul
+                        li
+                            a(href="galerie.html" id="gallery1").active-top Vietnam
+                        li
+                            a(href="galerie2.html" id="gallery2") Chine
+                        li
+                            a(href="galerie3.html" id="gallery3") Europe
             div
                 ul(lang="en")
                     li
