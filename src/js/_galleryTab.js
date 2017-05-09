@@ -55,7 +55,13 @@ const fHandleGalleryTab = function(oEvent) {
 
     $jsonFile = galleries[$elt.id];
 
-    $jsonFile.figures.forEach(function(figure) { document.querySelector("div ul").innerHTML += '<li><figure><a href="' + figure[0] + '" title="voir l\'image dans sa résolution originale"><img src="' + figure[1] + '" alt="' + figure[2] + '"></a><figcaption>' + figure[3] + '</figcaption></figure></li>' })
+    $jsonFile.figures.forEach(function(figure) { document.querySelector("div ul").innerHTML += '<li><figure><div class="loader"></div><a href="' + figure[0] + '" title="voir l\'image dans sa résolution originale"><img src="' + figure[1] + '" alt="' + figure[2] + '"></a><figcaption>' + figure[3] + '</figcaption></figure></li>' })
+
+    Array.from(document.querySelectorAll("figure img")).forEach(function($element) {
+        $element.addEventListener("load", function() {
+            $element.parentNode.parentNode.removeChild($element.parentNode.parentNode.childNodes[0]);
+        })
+    });
 
     Array.from(document.querySelectorAll(".galerie nav a")).forEach(function($element) {
         $element.addEventListener("click", fHandleGalleryTab);
