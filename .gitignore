@@ -1,4 +1,4 @@
 .idea
-assets/*
+assets
 node_modules
 src/\.DS_Store

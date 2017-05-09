@@ -12,6 +12,7 @@
                     li {
                         transition: 0.2s;
                         z-index: 0;
+                        cursor: zoom-in;
                         &:hover {
                             box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
                             transform: scale(1.2);
@@ -24,6 +25,7 @@
                                 display: block;
                                 margin: auto;
                                 max-width: 100%;
+                                cursor: zoom-in;
                             }
                             figcaption {
                                 padding: 18px;
@@ -104,48 +106,52 @@
     }*/
                 }
             }
-            .lightbox {
-                position: fixed;
-                z-index: 999;
-                width: 100%;
-                height: 100%;
-                text-align: center;
-                top: 0;
-                left: 0;
-                background: rgba(0, 0, 0, 0.8);
-                img {
-                    max-width: 90%;
-                    max-height: 80vh;
-                    margin-top: 2%;
-                }
-                figcaption {
-                    padding: 0 9px;
-                    font-size: type-scale(1);
-                    line-height: 2.4;
-                    font-family: 'Roboto', sans-serif;
-                    font-weight: 300;
-                    color: white;
-                }
+        }
+        
+        .lightbox {
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            cursor: zoom-out;
+            img {
+                max-width: 90%;
+                max-height: 80vh;
+                margin-top: 2%;
             }
-            .loader {
-                position: absolute;
-                top: 30%;
-                left: 0;
-                right: 0;
-                margin: auto;
-                border: 6px solid #ddd;
-                border-top: 6px solid black;
-                border-radius: 50%;
-                width: 3.6em;
-                height: 3.6em;
-                animation: spin 2s linear infinite;
+            figcaption {
+                padding: 0 9px;
+                font-size: type-scale(1);
+                line-height: 2.4;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 300;
+                color: white;
             }
-            @keyframes spin {
-                0% {
-                    transform: rotate(0deg);
-                }
-                100% {
-                    transform: rotate(360deg);
-                }
+        }
+        
+        .loader {
+            position: absolute;
+            top: 30%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 6px solid #ddd;
+            border-top: 6px solid black;
+            border-radius: 50%;
+            width: 3.6em;
+            height: 3.6em;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
             }
         }

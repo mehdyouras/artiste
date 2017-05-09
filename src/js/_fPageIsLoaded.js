@@ -1,7 +1,7 @@
 const fPageIsLoaded = function() {
     document.getElementById("btn-nav").addEventListener("click", fHandleNavbar);
 
-    Array.from(document.querySelectorAll("figure img")).forEach(function($elt) {
+    Array.from(document.querySelectorAll("figure")).forEach(function($elt) {
         $elt.addEventListener("click", fHandleLightbox);
     });
     Array.from(document.querySelectorAll("figure a")).forEach(function($elt) {
