@@ -1,5 +1,5 @@
 var gulp = require("gulp"),
-    image = require("gulp-image"),
+    image = require("gulp-imagemin"),
     pug = require("gulp-pug"),
     sass = require("gulp-sass"),
     autoprefixer = require("gulp-autoprefixer"),
@@ -43,5 +43,5 @@ gulp.task("watch", function() {
     gulp.watch("src/js/**", ["js"]);
 });
 // --- Aliases
-gulp.task("default", ["css", "html", "js"]);
+gulp.task("default", ["css", "html", "js", "images"]);
 gulp.task("work", ["default", "watch"]);
