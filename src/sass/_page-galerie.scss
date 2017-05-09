@@ -17,6 +17,9 @@
                             box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
                             transform: scale(1.2);
                             z-index: 1;
+                            @media screen and (max-width: 590px) {
+                                transform: scale(1);
+                            }
                         }
                         figure {
                             position: relative;

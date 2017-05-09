@@ -10,7 +10,9 @@ var gulp = require("gulp"),
 // --- Task for images
 gulp.task("images", function() {
     gulp.src("src/img/**", !"src/img/*.db")
-        .pipe(image())
+        .pipe(image([
+            image.jpegtran({ progressive: true }),
+        ]))
         .pipe(gulp.dest("assets/img"));
 });
 

@@ -1,5 +1,6 @@
 html {
     font-size: 62.5%;
+    border-top: solid 0.8em black;
 }
 
 .hidden {
@@ -39,8 +40,6 @@ cite {
 }
 
 body {
-    background: url("../img/bcg.png") repeat-x;
-    background-size: 0.8em;
     max-width: 675px;
     width: 75%;
     margin: 3.6em auto;
