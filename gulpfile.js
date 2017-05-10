@@ -29,6 +29,12 @@ gulp.task("fonts", function() {
         .pipe(gulp.dest("assets/fonts"));
 });
 
+// -- Task for favicon
+gulp.task("favicon", function() {
+    gulp.src("src/img/favicon.ico")
+        .pipe(gulp.dest("assets/"));
+});
+
 // --- Task for styles
 gulp.task("css", function() {
     gulp.src("src/sass/**/*.scss")
@@ -53,5 +59,5 @@ gulp.task("watch", function() {
 });
 
 // --- Aliases
-gulp.task("default", ["css", "html", "js", "images", "fonts"]);
+gulp.task("default", ["css", "html", "js", "images", "fonts", "favicon"]);
 gulp.task("work", ["default", "watch"]);
