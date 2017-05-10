@@ -7,6 +7,9 @@ article.galerie {
     }
     div {
         margin: 3.6em 0;
+        &:hover img {
+            filter: grayscale(100%);
+        }
         ul {
             @include flexbin($flexbin-row-height, $flexbin-space);
             li {
@@ -15,8 +18,8 @@ article.galerie {
                 cursor: zoom-in;
                 &:hover {
                     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
-                    transform: scale(1.2);
-                    z-index: 1;
+                    //transform: scale(1.2);
+                    //z-index: 1;
                     @media screen and (max-width: 590px) {
                         transform: scale(1);
                     }
@@ -29,10 +32,14 @@ article.galerie {
                         margin: auto;
                         max-width: 100%;
                         cursor: zoom-in;
+                        transition: 0.2s;
+                        &:hover {
+                            filter: grayscale(0);
+                        }
                     }
                     figcaption {
                         padding: 18px;
-                        font-size: type-scale(0);
+                        font-size: 1.2rem;
                         line-height: 1.6;
                         font-family: 'Roboto', sans-serif;
                         font-weight: 300;
