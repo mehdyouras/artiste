@@ -22,6 +22,13 @@ gulp.task("html", function() {
         .pipe(pug())
         .pipe(gulp.dest("."));
 });
+
+// -- Task for fonts
+gulp.task("fonts", function() {
+    gulp.src("src/fonts/**")
+        .pipe(gulp.dest("assets/fonts"));
+});
+
 // --- Task for styles
 gulp.task("css", function() {
     gulp.src("src/sass/**/*.scss")
@@ -44,6 +51,7 @@ gulp.task("watch", function() {
     gulp.watch("src/pug/**", ["html"]);
     gulp.watch("src/js/**", ["js"]);
 });
+
 // --- Aliases
-gulp.task("default", ["css", "html", "js", "images"]);
+gulp.task("default", ["css", "html", "js", "images", "fonts"]);
 gulp.task("work", ["default", "watch"]);
