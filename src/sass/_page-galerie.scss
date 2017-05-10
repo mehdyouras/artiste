@@ -1,160 +1,104 @@
-        article.galerie {
-            header nav {
-                border: 0;
-                a {
-                    font-size: type-scale(2);
+article.galerie {
+    header nav {
+        border: 0;
+        a {
+            font-size: type-scale(2);
+        }
+    }
+    div {
+        margin: 3.6em 0;
+        ul {
+            @include flexbin($flexbin-row-height, $flexbin-space);
+            li {
+                transition: 0.2s;
+                z-index: 0;
+                cursor: zoom-in;
+                &:hover {
+                    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
+                    transform: scale(1.2);
+                    z-index: 1;
+                    @media screen and (max-width: 590px) {
+                        transform: scale(1);
+                    }
+                }
+                figure {
+                    position: relative;
+                    overflow: hidden;
+                    img {
+                        display: block;
+                        margin: auto;
+                        max-width: 100%;
+                        cursor: zoom-in;
+                    }
+                    figcaption {
+                        padding: 18px;
+                        font-size: type-scale(0);
+                        line-height: 1.6;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 300;
+                        color: white;
+                        position: absolute;
+                        bottom: -100%;
+                        right: 0;
+                        left: 0;
+                        opacity: 0;
+                        transition: 0.2s;
+                    }
                 }
             }
-            div {
-                margin: 3.6em 0;
-                ul {
-                    @include flexbin($flexbin-row-height, $flexbin-space);
-                    li {
-                        transition: 0.2s;
-                        z-index: 0;
-                        cursor: zoom-in;
-                        &:hover {
-                            box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
-                            transform: scale(1.2);
-                            z-index: 1;
-                            @media screen and (max-width: 590px) {
-                                transform: scale(1);
-                            }
-                        }
-                        figure {
-                            position: relative;
-                            overflow: hidden;
-                            img {
-                                display: block;
-                                margin: auto;
-                                max-width: 100%;
-                                cursor: zoom-in;
-                            }
-                            figcaption {
-                                padding: 18px;
-                                font-size: type-scale(0);
-                                line-height: 1.6;
-                                font-family: 'Roboto', sans-serif;
-                                font-weight: 300;
-                                color: white;
-                                position: absolute;
-                                bottom: -100%;
-                                right: 0;
-                                left: 0;
-                                opacity: 0;
-                                transition: 0.2s;
-                            }
-                        }
-                    }
-                    li:hover figcaption {
-                        bottom: 0;
-                        opacity: 1;
-                        background: rgba(0, 0, 0, 0.4);
-                    }
-                    /*    ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    li {
-        position: relative;
-        box-sizing: border-box;
-        //border: 1px solid #ddd;
-        width: 48%;
-        min-height: 216px;
-        margin: 0 0 3.6em;
-        padding: 3px 8px 0;
-        transition: 0.2s;
-        overflow-y: hidden;
-        &:hover {
-            //box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
-        }
-        @media screen and (max-width: 715px) {
-            width: 100%;
+            li:hover figcaption {
+                bottom: 0;
+                opacity: 1;
+                background: rgba(0, 0, 0, 0.4);
+            }
         }
     }
-    figure img {
-        display: block;
-        margin: auto;
-        max-width: 100%;
-        max-height: 211px;
-        transition: 0.2s;
-        @media screen and (max-width: 715px) {
-            max-height: 283px;
-        }
-        &:hover {
-            box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
-            transform: scale(1.03);
-        }
+}
+
+.lightbox {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    cursor: zoom-out;
+    img {
+        max-width: 90%;
+        max-height: 80vh;
+        margin-top: 2%;
     }
     figcaption {
-        margin-top: 36px;
-        padding: 0 17px 18px 0;
+        padding: 0 9px;
         font-size: type-scale(1);
-        line-height: 1.6;
+        line-height: 2.4;
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
-        position: relative;
         color: white;
-        &::after {
-            z-index: -1;
-            content: " ";
-            width: 100%;
-            height: 2000px;
-            background: #000000;
-            position: absolute;
-            top: -60px;
-            left: -15px;
-        }
-    }*/
-                }
-            }
-        }
-        
-        .lightbox {
-            position: fixed;
-            z-index: 999;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.8);
-            cursor: zoom-out;
-            img {
-                max-width: 90%;
-                max-height: 80vh;
-                margin-top: 2%;
-            }
-            figcaption {
-                padding: 0 9px;
-                font-size: type-scale(1);
-                line-height: 2.4;
-                font-family: 'Roboto', sans-serif;
-                font-weight: 300;
-                color: white;
-            }
-        }
-        
-        .loader {
-            position: absolute;
-            top: 30%;
-            left: 0;
-            right: 0;
-            margin: auto;
-            border: 6px solid #ddd;
-            border-top: 6px solid black;
-            border-radius: 50%;
-            width: 3.6em;
-            height: 3.6em;
-            animation: spin 2s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
+    }
+}
+
+.loader {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 6px solid #ddd;
+    border-top: 6px solid black;
+    border-radius: 50%;
+    width: 3.6em;
+    height: 3.6em;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
