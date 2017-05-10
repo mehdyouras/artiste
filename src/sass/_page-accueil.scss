@@ -4,10 +4,13 @@ article.biographie {
         float: left;
         height: 32.4em;
         padding-right: 1.6em;
-        @media screen and (max-width: 450px) {
+        margin-top: 0.9em;
+        @media screen and (max-width: 550px) {
             float: none;
             display: block;
             margin: auto;
+            margin-top: 0;
+            margin-bottom: 3.6em;
         }
     }
     p {
