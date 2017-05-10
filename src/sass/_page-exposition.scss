@@ -59,6 +59,7 @@
         }
         p {
             @include v-rythm(2);
+            margin-bottom: 1.6em;
         }
         li {
             @include v-rythm(1);
