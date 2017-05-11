@@ -6,19 +6,67 @@ var gulp = require("gulp"),
     csso = require("gulp-csso"),
     babel = require("gulp-babel"),
     concat = require("gulp-concat"),
-    imageresize = require("gulp-image-resize"),
+    imageResize = require("gulp-image-resize"),
     rename = require("gulp-rename");
 
 // --- Task for images
+// gulp.task("images", function() {
+//     gulp.src("src/img/**", !"src/img/*.db")
+//         .pipe(image([
+//             image.jpegtran({ progressive: true }),
+//         ]))
+//         .pipe(gulp.dest("assets/img"));
+// });
+
 gulp.task("images", function() {
-    gulp.src("src/img/**", !"src/img/*.db")
+
+
+    // Resizes all galleries images to 255px in height
+    gulp.src("src/img/gallery*/*.jpg")
+        .pipe(imageResize({
+            height: 255,
+        }))
         .pipe(image([
             image.jpegtran({ progressive: true }),
         ]))
-        .pipe(gulp.dest("assets/img"));
-});
+        .pipe(gulp.dest("assets/img"))
 
-gulp.task("resize")
+
+    // Resizes all galleries images to 510 in height and add -510 suffix
+
+    gulp.src("src/img/gallery*/*.jpg")
+        .pipe(imageResize({
+            height: 510,
+        }))
+        .pipe(rename(function (path) {
+            path.basename += "-510";
+        }))
+        .pipe(image([
+            image.jpegtran({ progressive: true }),
+        ]))
+        .pipe(gulp.dest("assets/img"))
+
+
+        // Copies full-res images to assets and add -full suffix
+
+    gulp.src("src/img/gallery*/*.jpg")
+        .pipe(rename(function (path) {
+            path.basename += "-full";
+        }))
+        .pipe(image([
+            image.jpegtran({ progressive: true }),
+        ]))
+        .pipe(gulp.dest("assets/img"))
+
+
+        // Optimized and move other images
+
+        gulp.src("src/img/*.jpg", !"src/img/gallery*/*.jpg")
+        .pipe(image([
+            image.jpegtran({ progressive: true }),
+        ]))
+        .pipe(gulp.dest("assets/img"))
+});
 
 // --- Task for pug
 gulp.task("html", function() {
