@@ -5,7 +5,9 @@ var gulp = require("gulp"),
     autoprefixer = require("gulp-autoprefixer"),
     csso = require("gulp-csso"),
     babel = require("gulp-babel"),
-    concat = require("gulp-concat");
+    concat = require("gulp-concat"),
+    imageresize = require("gulp-image-resize"),
+    rename = require("gulp-rename");
 
 // --- Task for images
 gulp.task("images", function() {
@@ -15,6 +17,8 @@ gulp.task("images", function() {
         ]))
         .pipe(gulp.dest("assets/img"));
 });
+
+gulp.task("resize")
 
 // --- Task for pug
 gulp.task("html", function() {
