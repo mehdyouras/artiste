@@ -14,15 +14,25 @@ html {
 }
 
 .active-top {
-    border-top: 4px solid black;
+    border-top: 2px solid black;
     @media screen and (max-width: 450px) {
         border-top: 0;
         border-right: 4px solid black;
     }
+    &:hover {
+        border-top: 2px solid black;
+        @media screen and (max-width: 450px) {
+            border-top: 0;
+            border-right: 4px solid black;
+        }
+    }
 }
 
 .active-right {
-    border-right: 4px solid black;
+    border-right: 2px solid black;
+    &:hover {
+        border-right: 2px solid black;
+    }
 }
 
 .error {
@@ -73,20 +83,20 @@ header {
             a {
                 @include v-rythm(3);
                 text-decoration: none;
+                padding-top: 0.2em;
                 color: black;
                 font-family: 'Roboto', sans-serif;
                 font-weight: 300;
-                transition: 0.1s;
                 box-sizing: border-box;
                 @media screen and (max-width: 450px) {
                     padding-right: 0.3em;
                 }
             }
             a:hover {
-                border-top: 4px solid black;
+                border-top: 1px solid #ddd;
                 @media screen and (max-width: 450px) {
                     border-top: 0;
-                    border-right: 4px solid black;
+                    border-right: 2px solid #ddd;
                 }
             }
         }
@@ -135,10 +145,9 @@ footer {
             text-decoration: none;
             color: black;
             font-family: 'Roboto', sans-serif;
-            transition: 0.1s;
             padding-right: 0.3em;
             &:hover {
-                border-right: 4px solid black;
+                border-right: 1px solid #ddd;
             }
         }
     }
