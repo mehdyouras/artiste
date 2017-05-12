@@ -1,0 +1,18 @@
+.liens {
+    margin: 3.6em 0;
+    h2 {
+        @include v-rythm(3);
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+    }
+    ul {
+        @include v-rythm(1);   
+        list-style: circle;
+        margin-left: 7%; 
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+    }
+    li {
+        margin-bottom: 2.4em;
+    }
+}
