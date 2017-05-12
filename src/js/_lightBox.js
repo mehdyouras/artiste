@@ -11,7 +11,9 @@ const fHandleLightbox = function(oEvent) {
 
     $lightbox = document.querySelector(".lightbox");
     document.querySelector(".lightbox img").addEventListener("load", function() {
-        document.querySelector(".lightbox figure").removeChild(document.querySelector(".lightbox div.loader"));
+        document.querySelectorAll(".lightbox div.loader").forEach(function() {
+            document.querySelector(".lightbox figure").removeChild(document.querySelector(".lightbox div.loader"));
+        });
     });
 
     const fRemoveLightBox = function() {
@@ -33,16 +35,41 @@ const fHandleLightbox = function(oEvent) {
             if(parseInt(sCurrentImgIndex) === 1) {
                 sNextImage = sCurrentImg.replace("_1", "_" + $figures.length);
                 document.querySelector(".lightbox img").setAttribute("src", sNextImage)
-                //document.querySelector(".lightbox figure").innerHTML += "<div class='loader'></div>";
+                document.querySelector(".lightbox figure").innerHTML += "<div class='loader'></div>";
                 sNextImageCaption = document.querySelector('img[src="'+ sNextImage.replace("-full", "") + '"]').parentNode.parentNode.childNodes[1].textContent;
                 document.querySelector(".lightbox figcaption").innerHTML = sNextImageCaption;
             } else {
                 sNextImage = sCurrentImg.replace("_" + sCurrentImgIndex, "_" + parseInt(sCurrentImgIndex - 1));
                 document.querySelector(".lightbox img").setAttribute("src", sNextImage);
-                //document.querySelector(".lightbox figure").innerHTML += "<div class='loader'></div>";
+                document.querySelector(".lightbox figure").innerHTML += "<div class='loader'></div>";
                 sNextImageCaption = document.querySelector('img[src="'+ sNextImage.replace("-full", "") + '"]').parentNode.parentNode.childNodes[1].textContent;
                 document.querySelector(".lightbox figcaption").innerHTML = sNextImageCaption;
             }
+        }
+        if(evt.keyCode == 39) { // right arrow key
+            sCurrentImg = document.querySelector(".lightbox img").getAttribute("src");
+            sCurrentImgIndex = sCurrentImg.match(/_[1-9]*[0-9]/);
+            sCurrentImgIndex = sCurrentImgIndex[0].replace("_", "");
+            if(parseInt(sCurrentImgIndex) === $figures.length) {
+                sNextImage = sCurrentImg.replace("_" + $figures.length, "_1");
+                document.querySelector(".lightbox img").setAttribute("src", sNextImage)
+                document.querySelector(".lightbox figure").innerHTML += "<div class='loader'></div>";
+                sNextImageCaption = document.querySelector('img[src="'+ sNextImage.replace("-full", "") + '"]').parentNode.parentNode.childNodes[1].textContent;
+                document.querySelector(".lightbox figcaption").innerHTML = sNextImageCaption;
+            } else {
+                sNextImage = sCurrentImg.replace("_" + sCurrentImgIndex, "_" + (parseInt(sCurrentImgIndex) + 1));
+                document.querySelector(".lightbox img").setAttribute("src", sNextImage);
+                document.querySelector(".lightbox figure").innerHTML += "<div class='loader'></div>";
+                sNextImageCaption = document.querySelector('img[src="'+ sNextImage.replace("-full", "") + '"]').parentNode.parentNode.childNodes[1].textContent;
+                document.querySelector(".lightbox figcaption").innerHTML = sNextImageCaption;
+            }
+        }
+        if(document.querySelector(".lightbox div.loader")) {
+            document.querySelector(".lightbox img").addEventListener("load", function() {
+                document.querySelectorAll(".lightbox div.loader").forEach(function() {
+                    document.querySelector(".lightbox figure").removeChild(document.querySelector(".lightbox div.loader"));
+                });
+            });
         }
     };
 };
