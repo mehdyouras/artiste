@@ -1,4 +1,5 @@
 - ~~Crop border from thumbnails;~~
-- Debug scroll on contact model or make a new one;
+- ~~Debug scroll on contact model or make a new one;~~
 - ~~Expo header lineheight;~~
-- Bibliographie link to buy;
+- ~~Bibliographie link to buy;~~
+- Add microdata;
