@@ -9,7 +9,6 @@ const fHandleNameInput = function(oEvent) {
     let bTest = reName.test(oEvent.currentTarget.value),
         $error = document.querySelector("#form-group-name .error");
     if (oEvent.currentTarget.parentNode.querySelector(".error")) {
-        fEnableSubmitButton();
         oEvent.currentTarget.parentNode.removeChild($error);
         oEvent.currentTarget.parentNode.classList.remove("error");
     }
@@ -22,6 +21,7 @@ const fHandleNameInput = function(oEvent) {
             oEvent.currentTarget.parentNode.insertAdjacentHTML('beforeend', '<small class="error">Veuillez entrer un nom valide composé uniquement de lettre.</small>');
         }
     }
+    fEnableSubmitButton();
 };
 
 const fHandleEmailInput = function(oEvent) {
@@ -29,7 +29,6 @@ const fHandleEmailInput = function(oEvent) {
     let bTest = reEmail.test(oEvent.currentTarget.value),
         $error = document.querySelector("#form-group-email .error");
     if (oEvent.currentTarget.parentNode.querySelector(".error")) {
-        fEnableSubmitButton();
         oEvent.currentTarget.parentNode.removeChild($error);
         oEvent.currentTarget.parentNode.classList.remove("error");
     }
@@ -42,6 +41,7 @@ const fHandleEmailInput = function(oEvent) {
             oEvent.currentTarget.parentNode.insertAdjacentHTML('beforeend', '<small class="error">Veuillez entrer une adresse email valide.</small>');
         }
     }
+    fEnableSubmitButton();
 };
 
 const fHandleAddressInput = function(oEvent) {
@@ -49,7 +49,6 @@ const fHandleAddressInput = function(oEvent) {
     let bTest = reAddress.test(oEvent.currentTarget.value),
         $error = document.querySelector("#form-group-address .error");
     if (oEvent.currentTarget.parentNode.querySelector(".error")) {
-        fEnableSubmitButton();
         oEvent.currentTarget.parentNode.removeChild($error);
         oEvent.currentTarget.parentNode.classList.remove("error");
     }
@@ -62,6 +61,7 @@ const fHandleAddressInput = function(oEvent) {
             oEvent.currentTarget.parentNode.insertAdjacentHTML('beforeend', '<small class="error">Veuillez entrer une adresse valide.</small>');
         }
     }
+    fEnableSubmitButton();
 };
 
 const fHandleCountInput = function(oEvent) {
@@ -69,7 +69,6 @@ const fHandleCountInput = function(oEvent) {
     let bTest = reCount.test(oEvent.currentTarget.value),
         $error = document.querySelector("#submit-line .error");
     if (oEvent.currentTarget.parentNode.querySelector(".error")) {
-        fEnableSubmitButton();
         oEvent.currentTarget.parentNode.removeChild($error);
         oEvent.currentTarget.parentNode.classList.remove("error");
     }
@@ -84,11 +83,23 @@ const fHandleCountInput = function(oEvent) {
     }
 };
 
+const fValidateForm = function() {
+    document.querySelector("body").removeChild(document.querySelector(".contact"));
+    let linkToForm = document.querySelector("#linkToForm");
+    linkToForm.textContent = "Formulaire envoyé avec succès";
+    linkToForm.parentNode.classList.add("success");
+}
+
 const fDisableSubmitButton = function(oEvent) {
     let $submitBtn = document.querySelector('[type="submit"]');
     $submitBtn.setAttribute("disabled", true);
+fEnableSubmitButton();
 }
 const fEnableSubmitButton = function(oEvent) {
+    if(document.querySelector(".error") || document.querySelector("#name").value === "" || document.querySelector("#email").value === "" || document.querySelector("#address").value === "") {
+        return;
+    }
     let $submitBtn = document.querySelector('[type="submit"]');
     $submitBtn.removeAttribute("disabled");
+    $submitBtn.addEventListener("click", fValidateForm);
 }

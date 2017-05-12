@@ -1,5 +1,9 @@
 .contact {
     margin: 3.6em 0;
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+    opacity: 0;
     fieldset {
         width: 70%;
         margin: auto;
@@ -37,25 +41,34 @@
     }
     label {
         line-height: 2.4;
+        font-size: type-scale(2);
     }
     input {
         width: 100%;
         box-sizing: border-box;
-        height: 3.272727272727273em;
+        height: 3em;
         /* 36px/11px */
+        font-size: type-scale(1);
     }
     textarea {
         width: 100%;
     }
     input[type="submit"] {
-        width: 30%;
+         width: 30%;
         background-color: white;
-        border: 1px solid #ddd;
+        border: 0;
+        background: black;
+        color: white;
         margin-left: auto;
         @media screen and (max-width: 680px) {
             //margin-left: 0;
             margin-top: 36px;
         }
+    }
+    input[disabled="true"] {
+        background: white;
+        color: #ddd;
+        border: solid 1px #ddd;
     }
     input[type="number"] {
         display: block;
@@ -107,4 +120,10 @@
         width: 100%;
         font-size: 2.4em;
     }
+}
+
+.contact-page {
+    height: auto;
+    overflow: auto;
+    opacity: 1;
 }

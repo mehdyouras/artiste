@@ -8,8 +8,8 @@ const fPageIsLoaded = function() {
         $elt.addEventListener("click", fHandleFigureLinks);
     });
 
-    if (document.getElementById("linkToModal")) {
-        document.getElementById("linkToModal").addEventListener("click", fHandleContactModal);
+    if (document.getElementById("linkToForm")) {
+        document.getElementById("linkToForm").addEventListener("click", fHandleContactModal);
     }
     if (document.querySelector(".contact")) {
         document.getElementById('name').addEventListener("blur", fHandleNameInput);

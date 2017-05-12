@@ -91,6 +91,17 @@
                 content: "\f15c";
                 margin-right: 0.5em;
             }
+            &.success {
+                a[id="linkToForm"] {
+                    color: #429e00;
+                }
+                &:nth-child(4)::before {
+                    color: #429e00;
+                    font-family: 'FontAwesome';
+                    content: "\f00c";
+                    margin-right: 0.5em;
+                }
+            }
         }
     }
 }

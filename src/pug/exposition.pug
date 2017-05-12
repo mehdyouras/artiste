@@ -38,7 +38,26 @@ html(lang="fr")
                             li <time datetime="2017-04-17">17 avril</time> - <time datetime="2017-05-26">26 mai</time> de <time datetime="10:00+01:00">10h</time> - <time datetime="21:00+01:00">21h</time>
                             li Entrée à 9€ 
                             li
-                                a(href="contact.html" id="linkToModal") Obtenir le catalogue de l'exposition
+                                a(href="contact.html" id="linkToForm") Obtenir le catalogue de l'exposition
+        section.contact
+            h2.hidden(aria-hidden="true" aria-level=2) Obtenir un catalogue
+            form(action="#")
+                fieldset
+                    legend Obtenir un catalogue
+                    div#form-group-name
+                        label(for="name") Votre nom
+                        input(type="text" name="name" id="name")
+                    div#form-group-email
+                        label(for="email") Votre email
+                        input(type="email" name="email" id="email")
+                    div#form-group-address
+                        label(for="address") Votre adresse
+                        input(type="text" name="address" id="address")
+                    div#submit-line
+                        div
+                            label(for="count") Nombre de catalogue souhaité
+                            input(type="number" value="1" name="count" id="count")
+                        input(type="submit" value="Envoyer")
         footer
             nav
                 h2(class="hidden" aria-hidden="true" aria-level=2) Navigation secondaire
