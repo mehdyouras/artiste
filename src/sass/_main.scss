@@ -54,7 +54,7 @@ body {
     width: 75%;
     margin: 3.6em auto;
     line-height: 1.6;
-    @media screen and (max-width: 560px) {
+    @media screen and (max-width: 700px) {
         width: 95%;
     }
 }
@@ -102,27 +102,6 @@ header {
         }
     }
 }
-
-[id="btn-nav"] {
-    visibility: 0;
-    @media screen and (max-width: 450px) {
-        visibility: 1;
-        border-bottom: 17px double black;
-        border-top: 6px solid black;
-        content: "";
-        height: 0.5em;
-        width: 3em;
-    }
-}
-
-[id="btn-container"] {
-    visibility: 0;
-    @media screen and (max-width: 450px) {
-        visibility: 1;
-        padding: 4px 0;
-    }
-}
-
 footer {
     box-sizing: border-box;
     border-top: 1px solid black;
