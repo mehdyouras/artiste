@@ -12,4 +12,31 @@
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
     }
+    li {
+        margin-bottom: 2.4em;
+    }
+    a {
+        text-decoration: none;
+        display: block;
+        color: #717171;
+        font-weight: 700;
+        transition: 0.2s;
+        &:hover {
+            color: black;
+        }
+    }
+    .toAmazon {
+        &::before {
+            content: "\f270";
+            font-family: 'FontAwesome';
+            margin-right: 0.5em;
+        }
+    }
+    .toGbook {
+        &::before {
+            content: "\f1a0";
+            font-family: 'FontAwesome';
+            margin-right: 0.5em;
+        }
+    }
 }
