@@ -1,8 +1,8 @@
 const fHandleLightbox = function(oEvent) {
-    let sCaption, $img, sImgSrc, sLightboxSrc, $lightbox;
+    let sCaption, $img, sImgSrc, sLightboxSrc, $lightbox, sCurrentImg, sCurrentImgIndex, $figures, sNextImage, sNextImageCaption;
     oEvent.preventDefault();
     $img = oEvent.currentTarget.firstChild;
-
+    $figures =  Array.from(document.querySelectorAll("figure"));
 
     sImgSrc = $img.getAttribute("href");
 
@@ -23,8 +23,26 @@ const fHandleLightbox = function(oEvent) {
     $lightbox.addEventListener("click", fRemoveLightBox);
     document.onkeydown = function(evt) {
         evt = evt || window.event;
-        if (evt.keyCode == 27) {
+        if (evt.keyCode == 27) { // ESC key
             fRemoveLightBox();
+        }
+        if(evt.keyCode == 37) { // Left arrow key
+            sCurrentImg = document.querySelector(".lightbox img").getAttribute("src");
+            sCurrentImgIndex = sCurrentImg.match(/_[1-9]*[0-9]/);
+            sCurrentImgIndex = sCurrentImgIndex[0].replace("_", "");
+            if(parseInt(sCurrentImgIndex) === 1) {
+                sNextImage = sCurrentImg.replace("_1", "_" + $figures.length);
+                document.querySelector(".lightbox img").setAttribute("src", sNextImage)
+                //document.querySelector(".lightbox figure").innerHTML += "<div class='loader'></div>";
+                sNextImageCaption = document.querySelector('img[src="'+ sNextImage.replace("-full", "") + '"]').parentNode.parentNode.childNodes[1].textContent;
+                document.querySelector(".lightbox figcaption").innerHTML = sNextImageCaption;
+            } else {
+                sNextImage = sCurrentImg.replace("_" + sCurrentImgIndex, "_" + parseInt(sCurrentImgIndex - 1));
+                document.querySelector(".lightbox img").setAttribute("src", sNextImage);
+                //document.querySelector(".lightbox figure").innerHTML += "<div class='loader'></div>";
+                sNextImageCaption = document.querySelector('img[src="'+ sNextImage.replace("-full", "") + '"]').parentNode.parentNode.childNodes[1].textContent;
+                document.querySelector(".lightbox figcaption").innerHTML = sNextImageCaption;
+            }
         }
     };
 };
