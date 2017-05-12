@@ -27,15 +27,15 @@ article.galerie {
                 figure {
                     position: relative;
                     overflow: hidden;
+                    &:hover img{
+                        filter: grayscale(0);
+                    }
                     img {
                         display: block;
                         margin: auto;
                         max-width: 100%;
                         cursor: zoom-in;
                         transition: 0.2s;
-                        &:hover {
-                            filter: grayscale(0);
-                        }
                     }
                     figcaption {
                         padding: 18px;
