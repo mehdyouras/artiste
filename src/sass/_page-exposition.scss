@@ -14,7 +14,7 @@
             flex-direction: column;
             flex-wrap: wrap;
         }
-        time {
+        .eventDate {
             display: block;
             border-left: solid 1px #ddd;
             font-size: 3.375rem;
@@ -22,7 +22,7 @@
             min-width: 25%;
             text-align: center;
             padding-bottom: 18px;
-            span {
+            time {
                 display: block;
             }
             @media screen and (max-width: 750px) {

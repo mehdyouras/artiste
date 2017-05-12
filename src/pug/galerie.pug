@@ -35,10 +35,10 @@ html(lang="fr")
                 ul(lang="en")
                     each val in gallery
                         li
-                            figure
+                            figure(itemscope itemType="http://schema.org/ImageObject")
                                 a(href="" + val[0] + "", title="voir l'image dans sa résolution originale")
-                                    img(src="" + val[1] + "" srcset="" + val[2] + " 2x" alt="" + val[3] + "")
-                                figcaption #{val[4]}
+                                    img(src="" + val[1] + "" srcset="" + val[2] + " 2x" alt="" + val[3] + "" itemprop="thumbnail")
+                                figcaption(itemprop="caption") #{val[4]}
         footer
             nav
                 h2(class="hidden" aria-level=2) Navigation secondaire
