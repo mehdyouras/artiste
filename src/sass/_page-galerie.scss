@@ -30,6 +30,11 @@ article.galerie {
                     &:hover img{
                         filter: grayscale(0);
                     }
+                    a {
+                        &:focus img{
+                            transform: scale(1.1);
+                        }
+                    }
                     img {
                         display: block;
                         margin: auto;
@@ -53,7 +58,7 @@ article.galerie {
                     }
                 }
             }
-            li:hover figcaption {
+            li:hover figcaption, a:focus+figcaption {
                 bottom: 0;
                 opacity: 1;
                 background: rgba(0, 0, 0, 0.4);
