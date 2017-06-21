@@ -25,8 +25,8 @@ html(lang="fr")
                 header 
                     h3(itemprop="name") Exposition au Musée de la Photographie de Bruxelles
                     div.eventDate
-                        time(datetime="2017-04-17" itemprop="startDate") 17/04
-                        time(datetime="2017-05-26" itemprop="endDate") 26/05
+                        time(datetime="2017-04-17", itemprop="startDate") 17/04
+                        time(datetime="2017-05-26", itemprop="endDate") 26/05
                 section
                     h3.hidden(aria-hidden="true") Description de l'exposition
                     img(src="img/catalogue.jpg", alt="Couverture du livre Larry Burrows: Viet-nam", itemprop="image")
@@ -34,7 +34,7 @@ html(lang="fr")
                         p(itemprop="description") « <cite itemprop="performer">Larry Burrows: Viet-nam</cite> » vous sera présenté dans son intégralité au Musée de la Photographie de Bruxelles du <time datetime="2017-04-17">17 avril</time> au <time datetime="2017-05-26">26 mai</time>.
                         ul
                             li(itemprop="location" itemscope itemtype="http://schema.org/PostalAddress") <span itemprop="streetAddress">Rue du Cirque 10</span>, <span itemprop="postalCode">1000</span> <span itemprop="addressLocality">Bruxelles</span>
-                            li <time (itemprop="startDate") datetime="2017-04-17">17 avril</time> - <time (itemprop="endDate") datetime="2017-05-26">26 mai</time> de <time (itemprop="doorTime") datetime="10:00+01:00">10h</time> - <time datetime="21:00+01:00">21h</time>
+                            li <time itemprop="startDate" datetime="2017-04-17">17 avril</time> - <time itemprop="endDate" datetime="2017-05-26">26 mai</time> de <time itemprop="doorTime" datetime="10:00+01:00">10h</time> - <time datetime="21:00+01:00">21h</time>
                             li(itemprop="offers" itemscope itemtype="http://schema.org/Offer") Entrée à <span itemprop="price">9</span><span itemprop="priceCurrency" content="EUR">€</span>
                             li
                                 a(href="contact.html" id="linkToForm") Obtenir le catalogue de l'exposition
